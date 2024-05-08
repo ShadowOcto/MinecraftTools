@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Minecraft Tools</title>
+    <style>
+        @font-face {
+            font-family: 'Mojangles';
+            src: url('fonts/Mojang-Regular.ttf') format('truetype');
+            font-weight: lighter;
+            font-style: normal;
+        }
+
+        .mute-switch {
+            position: fixed;
+            top: 8px;
+            right: 8px;
+            cursor: pointer;
+            z-index: 4;
+        }
+
+        .mute-switch img {
+            width: 30px;
+        }
+
+        .bottom-right-text {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-family: 'Mojangles', cursive;
+            font-size: 14px;
+            z-index: 4
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 id="site-title">Minecraft Tools</h1>
+    </div>
+
+    <div class="spacer"></div>
+    
+    <a href="/download//Texture Pack Testing World.zip" class="textured-button">Texture Pack World Testing World (1.8)</a>
+    <a href="/download//Texture Pack Base.zip" class="textured-button">Texture Pack Base (1.8)</a>
+    <a href="/download//Shadow's Primary.zip" class="textured-button">Improved Textures (1.20)</a>
+    <a href="https://google.com" class="textured-button">Placeholder</a>
+    <button onclick="copyChar()" class="textured-button">Copy Colour Character (§)</button>
+    <a href="https://shadowocto.github.io" class="textured-button">Quit</a>
+    
+    <audio id="background-audio" loop>
+        <source src="/assets/TheEnd.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div id="video-container">
+        <video id="background-video" preload="auto" autoplay muted loop>
+            <source src="/assets/end.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <img id="background-image" src="/assets/end.png" alt="Background Image">
+    </div>
+
+    <div class="mute-switch" onclick="toggleMute()">
+        <img id="mute-image" src="/assets/Unmute.png" alt="Unmute">
+    </div>
+
+    <div class="bottom-right-text">
+        This website was mostly made as a test, don't expect too much
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        var audio = document.getElementById('background-audio');
+        var muteImage = document.getElementById('mute-image');
+        audio.muted = true;
+        function toggleMute() {
+            if (audio.muted) {
+                audio.muted = false;
+                audio.play();
+                muteImage.src = "/assets/Mute.png";
+            } else {
+                audio.muted = true;
+                muteImage.src = "/assets/Unmute.png";
+            }
+        }
+        function copyChar() {
+            navigator.clipboard.writeText("§");
+        }
+    </script>
+</body>
+</html>
