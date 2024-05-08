@@ -23,7 +23,7 @@ body, html {
 }
 
 .textured-button {
-    background-image: url('/assets/Button.png');
+    background-image: url('https://shadowocto.github.io/MinecraftTools/assets/Button.png');
     background-size: cover;
     border: none;
     color: white;
@@ -47,7 +47,7 @@ body, html {
 
 
 .textured-button:hover {
-    background-image: url('/assets/Button-hover.png');
+    background-image: url('https://shadowocto.github.io/MinecraftTools/assets/Button-hover.png');
 }
 
 #video-container {
